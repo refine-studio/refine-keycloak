@@ -1,4 +1,4 @@
-# 🔐 refined-keycloak
+# 🔐 refine-keycloak
 
 The refine-branded Keycloak **login** theme for `login.refine.studio`. It is a child theme of
 `keycloak.v2`, follows the visitor's light or dark setting, and shows the rippling hexagon
@@ -19,7 +19,7 @@ Tested on Keycloak **26.8.1**. You need admin access to the server and to the re
 **Before you start:** open the admin console, then the user menu → _Server info_. Check that
 the version is 26.x. On another major version, stop here: the theme is tested on 26.x only.
 
-1. Download `refined-keycloak-<version>.jar` from the latest GitHub release.
+1. Download `refine-keycloak-<version>.jar` from the latest GitHub release.
 2. Copy the file to `/opt/keycloak/providers/` and restart Keycloak. If the server starts
    with `--optimized`, run `kc.sh build` before the restart, or rebuild the image with the
    file in `providers/`.
@@ -55,7 +55,7 @@ Needs Docker and `make`.
 | ----------- | -------------------------------------------------------------------------------------- |
 | `make dev`  | starts Keycloak 26.8.1 on http://localhost:8080 with the theme mounted from `themes/` |
 | `make seed` | creates the user `demo` / `demo`, who must set up OTP at the first login, and `bum` / `bum` in the realm `bum` |
-| `make jar`  | builds `build/refined-keycloak-<version>.jar`                                          |
+| `make jar`  | builds `build/refine-keycloak-<version>.jar`                                          |
 | `make check-idp` | proves the company sign-in buttons lead where the stock theme sends them |
 | `make hex`  | rebuilds the hexagon bundle from `src/hex/` (needs Node)                               |
 | `make logs` | follows the Keycloak log                                                               |
@@ -124,7 +124,7 @@ on gzip at the reverse proxy in front of it. Browsers cache the file after the f
 
 ## 📦 Release
 
-Push a tag such as `v1.0.0`. The `release` workflow builds `refined-keycloak-1.0.0.jar` and
+Push a tag such as `v1.0.0`. The `release` workflow builds `refine-keycloak-1.0.0.jar` and
 attaches it to a GitHub release.
 
 ## ⚖️ License
