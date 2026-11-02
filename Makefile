@@ -1,8 +1,8 @@
-# refined-keycloak: refine-branded Keycloak login theme.
+# refine-keycloak: refine-branded Keycloak login theme.
 # make dev   start local Keycloak with the theme mounted live
 # make seed  create the demo user (demo / demo, must set up OTP)
 # make check-idp  prove the company buttons lead where the stock theme sends them
-# make jar   build build/refined-keycloak-<version>.jar
+# make jar   build build/refine-keycloak-<version>.jar
 # make hex   rebuild the committed hexagon bundle from src/hex (needs Node)
 
 KC_PORT           ?= 8080
@@ -13,7 +13,7 @@ URL               := http://localhost:$(KC_PORT)
 
 # v1.2.3 -> 1.2.3. No tag yet -> 0.0.0-dev.
 VERSION ?= $(or $(patsubst v%,%,$(shell git describe --tags 2>/dev/null)),0.0.0-dev)
-JAR     := build/refined-keycloak-$(VERSION).jar
+JAR     := build/refine-keycloak-$(VERSION).jar
 
 THREE_VERSION   := 0.185.1
 ESBUILD_VERSION := 0.28.2
