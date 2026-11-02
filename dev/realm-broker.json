@@ -1,0 +1,58 @@
+{
+  "realm": "broker",
+  "displayName": "BuM SSO",
+  "enabled": true,
+  "sslRequired": "none",
+  "loginTheme": "refine-broker",
+  "registrationAllowed": false,
+  "identityProviders": [
+    {
+      "alias": "bum",
+      "displayName": "Buben & Mädchen GmbH",
+      "providerId": "keycloak-oidc",
+      "enabled": true,
+      "trustEmail": true,
+      "firstBrokerLoginFlowAlias": "first broker login",
+      "config": {
+        "clientId": "broker",
+        "clientSecret": "local-only-broker-secret",
+        "clientAuthMethod": "client_secret_post",
+        "authorizationUrl": "http://localhost:8080/realms/bum/protocol/openid-connect/auth",
+        "tokenUrl": "http://localhost:8080/realms/bum/protocol/openid-connect/token",
+        "userInfoUrl": "http://localhost:8080/realms/bum/protocol/openid-connect/userinfo",
+        "logoutUrl": "http://localhost:8080/realms/bum/protocol/openid-connect/logout",
+        "issuer": "http://localhost:8080/realms/bum",
+        "validateSignature": "true",
+        "useJwksUrl": "true",
+        "jwksUrl": "http://localhost:8080/realms/bum/protocol/openid-connect/certs",
+        "defaultScope": "openid profile email",
+        "syncMode": "IMPORT",
+        "pkceEnabled": "false"
+      }
+    },
+    {
+      "alias": "refine-studio",
+      "displayName": "Refine Studio GmbH",
+      "providerId": "keycloak-oidc",
+      "enabled": true,
+      "trustEmail": true,
+      "firstBrokerLoginFlowAlias": "first broker login",
+      "config": {
+        "clientId": "broker",
+        "clientSecret": "local-only-broker-secret",
+        "clientAuthMethod": "client_secret_post",
+        "authorizationUrl": "http://localhost:8080/realms/refine/protocol/openid-connect/auth",
+        "tokenUrl": "http://localhost:8080/realms/refine/protocol/openid-connect/token",
+        "userInfoUrl": "http://localhost:8080/realms/refine/protocol/openid-connect/userinfo",
+        "logoutUrl": "http://localhost:8080/realms/refine/protocol/openid-connect/logout",
+        "issuer": "http://localhost:8080/realms/refine",
+        "validateSignature": "true",
+        "useJwksUrl": "true",
+        "jwksUrl": "http://localhost:8080/realms/refine/protocol/openid-connect/certs",
+        "defaultScope": "openid profile email",
+        "syncMode": "IMPORT",
+        "pkceEnabled": "false"
+      }
+    }
+  ]
+}

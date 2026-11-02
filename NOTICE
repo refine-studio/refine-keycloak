@@ -1,0 +1,26 @@
+refined-keycloak
+Copyright 2026 refine studio
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE),
+with the exception named below.
+
+Exception: the refine logo
+--------------------------
+The files themes/refine/login/resources/img/logo.svg and logo-dark.svg are the
+refine logo. All rights reserved. They are not covered by the Apache License.
+If you reuse this theme, replace both files with your own logo.
+
+Third-party material
+--------------------
+themes/refine/login/field.ftl
+  Copied from the keycloak.v2 login theme of Keycloak 26.8.1 and changed.
+  Copyright Red Hat, Inc. and/or its affiliates and other contributors.
+  Licensed under the Apache License, Version 2.0. https://www.keycloak.org
+
+themes/refine/login/resources/js/hex.js
+  Bundles three.js 0.185.1. Copyright 2010-2026 Three.js Authors.
+  Licensed under the MIT License. https://threejs.org
+
+themes/refine/login/resources/fonts/geist-*.woff2
+  The Geist font. Copyright 2024 The Geist Project Authors.
+  Licensed under the SIL Open Font License 1.1 (see fonts/OFL.txt).

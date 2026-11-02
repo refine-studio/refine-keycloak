@@ -1,0 +1,16 @@
+{
+  "themes": [
+    {
+      "name": "refine",
+      "types": [
+        "login"
+      ]
+    },
+    {
+      "name": "refine-broker",
+      "types": [
+        "login"
+      ]
+    }
+  ]
+}

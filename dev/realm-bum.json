@@ -1,0 +1,23 @@
+{
+  "realm": "bum",
+  "displayName": "Buben & Mädchen (local stand-in)",
+  "enabled": true,
+  "sslRequired": "none",
+  "loginWithEmailAllowed": true,
+  "clients": [
+    {
+      "clientId": "broker",
+      "name": "Local BuM SSO broker",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "local-only-broker-secret",
+      "standardFlowEnabled": true,
+      "redirectUris": [
+        "http://localhost:8080/realms/broker/broker/bum/endpoint*"
+      ],
+      "webOrigins": [
+        "+"
+      ]
+    }
+  ]
+}

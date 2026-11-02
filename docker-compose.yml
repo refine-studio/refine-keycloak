@@ -1,0 +1,23 @@
+# Local Keycloak for theme development. Not for production.
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.8.1
+    command:
+      - start-dev
+      - --import-realm
+      # Serve theme files straight from disk, so a reload shows every edit.
+      - --spi-theme--cache-themes=false
+      - --spi-theme--cache-templates=false
+      - --spi-theme--static-max-age=-1
+    environment:
+      # Local-only bootstrap admin. Override with KC_ADMIN / KC_ADMIN_PASSWORD.
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_ADMIN:-admin}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_ADMIN_PASSWORD:-admin}
+    ports:
+      - "${KC_PORT:-8080}:8080"
+    volumes:
+      - ./themes/refine:/opt/keycloak/themes/refine:ro
+      - ./themes/refine-broker:/opt/keycloak/themes/refine-broker:ro
+      - ./dev/realm-refine.json:/opt/keycloak/data/import/realm-refine.json:ro
+      - ./dev/realm-bum.json:/opt/keycloak/data/import/realm-bum.json:ro
+      - ./dev/realm-broker.json:/opt/keycloak/data/import/realm-broker.json:ro

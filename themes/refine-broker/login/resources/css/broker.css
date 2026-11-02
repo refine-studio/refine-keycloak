@@ -1,0 +1,25 @@
+/*
+ * refine-broker: the refine look with the company buttons only.
+ *
+ * Hides the email and password form on the sign-in page, and turns the divider
+ * above the company buttons into a caption. Nothing else changes.
+ * The form stays in the page and the realm's sign-in rules are unchanged, so
+ * switching the realm back to keycloak.v2 brings it back in one click.
+ * Alerts, such as a failed company login, stay visible.
+ */
+
+[data-page-id="login-login"] #kc-form-login {
+  display: none;
+}
+
+/* The divider reads "Choose your company" and sits right under the heading.
+ * Without the form above it, its lines would point at nothing. */
+[data-page-id="login-login"] .kc-login-divider {
+  margin-block: 0 1rem;
+  font-size: 0.875rem;
+}
+
+[data-page-id="login-login"] .kc-login-divider::before,
+[data-page-id="login-login"] .kc-login-divider::after {
+  display: none;
+}

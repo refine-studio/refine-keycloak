@@ -1,0 +1,27 @@
+{
+  "realm": "refine",
+  "displayName": "refine",
+  "enabled": true,
+  "sslRequired": "none",
+  "loginTheme": "refine",
+  "resetPasswordAllowed": true,
+  "rememberMe": true,
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "clients": [
+    {
+      "clientId": "broker",
+      "name": "Local BuM SSO broker",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "local-only-broker-secret",
+      "standardFlowEnabled": true,
+      "redirectUris": [
+        "http://localhost:8080/realms/broker/broker/refine-studio/endpoint*"
+      ],
+      "webOrigins": [
+        "+"
+      ]
+    }
+  ]
+}
